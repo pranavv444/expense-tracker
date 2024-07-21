@@ -5,6 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        .container{
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 19px;
+            background-color: whitesmoke;
+            border-radius: 9px;
+            box-shadow: 0px 2px 4px black;
+        }
+
+        input[type="text" ],select,input[type=number],input[type=submit]{
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"]{
+            background-color: aqua;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover{
+            background-color: #45a049;
+
+        }
+    </style>
 </head>
 
 <body>
@@ -21,9 +56,23 @@
                 <option value="Others">Others</option>
 
                 </option>
-            </select><br>
+            </select><br><br>
             <input type="number" id="amount" placeholder="Amount" required><br>
+            <input type="submit" value="Add Exepense">
         </form>
+        <h3>Expense Summary</h3>
+        <table id="exoense table">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody id="expenselist">
+
+            </tbody>
+        </table>
     </div>
 </body>
 
