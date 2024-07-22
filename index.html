@@ -58,6 +58,19 @@
             background-color: greenyellow;
             color: azure;
         }
+
+        .delete-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background-color: darkred;
+        }
     </style>
 </head>
 
@@ -84,6 +97,7 @@
                     <th>Description</th>
                     <th>Category</th>
                     <th>Amount</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody id="expenselist">
@@ -107,13 +121,18 @@
                 const newrow = document.createElement('tr');
                 newrow.innerHTML = `<td>${description}</td>
                                     <td>${category}</td>
-                                    <td>${amount}</td>`;
+                                    <td>${amount}</td>
+                                    <td><button class="delete-btn">Delete</button></td>`;
 
                 expenselist.appendChild(newrow);
 
                 document.getElementById('description').value = '';
                 document.getElementById('category').value = '';
                 document.getElementById('amount').value = '';
+
+                newrow.querySelector('.delete-btn').addEventListener('click', function() {
+                    expenselist.removeChild(newrow);
+                });
             }
         });
     </script>
